@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>For You 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<!-- AUDIO -->
+<audio id="musicIndex" loop>
+  <source src="music/instrumen.mp3" type="audio/mpeg">
+</audio>
+<audio id="musicStory" loop>
+  <source src="music/hbd.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ❤️ HEARTS -->
+<div class="hearts"></div>
+
+<!-- ================= STEP 1 : DATE ================= -->
+<section class="screen active" id="screenDate">
+  <h2 class="title">Tap Tanggalnya 💓</h2>
+  <div class="date-heart" onclick="goToCake()">
+    <span>17</span> • <span>01</span> • <span>2005</span>
+  </div>
+</section>
+
+<!-- ================= STEP 2 : CAKE ================= -->
+<section class="screen" id="screenCake">
+  <svg id="cakeSvg" viewBox="0 0 280 280" onclick="blowCandle()">
+
+    <ellipse cx="140" cy="245" rx="95" ry="14" fill="#f8a1c4"/>
+    <rect x="45" y="135" width="190" height="90" rx="30" fill="#ff8fc4"/>
+    <rect x="65" y="100" width="150" height="55" rx="30" fill="#ffd1e8"/>
+
+    <!-- candles -->
+    <g class="candle">
+      <rect x="105" y="55" width="10" height="45" rx="5" fill="#fff"/>
+      <path class="flame" d="M110 45 C104 55,116 55,110 72" fill="orange"/>
+    </g>
+    <g class="candle">
+      <rect x="135" y="50" width="10" height="50" rx="5" fill="#fff"/>
+      <path class="flame" d="M140 40 C134 50,146 50,140 72" fill="orange"/>
+    </g>
+    <g class="candle">
+      <rect x="165" y="55" width="10" height="45" rx="5" fill="#fff"/>
+      <path class="flame" d="M170 45 C164 55,176 55,170 72" fill="orange"/>
+    </g>
+
+  </svg>
+  <p class="tap-text">Tiup lilinnya 🎂</p>
+
+  <div id="afterBlow">
+    <h2>Selamat Ulang Tahun Cantik 💕</h2>
+    <button onclick="goToCard()">Masuk 💌</button>
+  </div>
+</section>
+
+<!-- ================= STEP 3 : CARD ================= -->
+<section class="screen" id="screenCard">
+  <div class="card" onclick="nextCard()">
+    <p id="cardText"></p>
+  </div>
+</section>
+
+<!-- ================= STEP 4 : FINAL ================= -->
+<section class="screen" id="screenFinal">
+  <div class="card">
+    <h2 class="heartbeat">23 April 2022 💓</h2>
+    <p id="days"></p>
+    <button onclick="goToStory()">📖 Cerita Kita</button>
+  </div>
+</section>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>

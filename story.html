@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Cerita Cinta Kita 💞</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles/style.css">
+</head>
+
+<audio id="bgMusicStory" loop>
+    <source src="music/hbd.mp3" type="audio/mpeg">
+</audio>
+
+
+<body class="story-page">
+
+<h1>💞 Cerita Cinta Kita 💞</h1>
+<p class="since">Sejak 23 April 2022 🤍</p>
+<p class="note">Geser ceritanya ya sayang 💖</p>
+
+<div class="story-slider" id="storyContainer">
+
+    <div class="story-card">
+        <img src="img/foto1.jpeg" alt="Awal Bertemu">
+        <p>Pertama kita keluar 💖</p>
+    </div>
+
+    <div class="story-card">
+        <img src="img/foto2.jpeg" alt="Momen Indah">
+        <p>Momen paling aku suka sama kamu 🥰</p>
+    </div>
+
+    <div class="story-card">
+        <img src="img/foto3.jpeg" alt="Selamanya">
+        <p>Semoga kita terus bersama 🤍</p>
+    </div>
+
+    <div class="story-card">
+        <img src="img/f.jpeg">
+        <p>NANTI BISALAH FOTO BACKGROUND YANG SAMA HAHAHA 🤍</p>
+    </div>
+
+    <div class="story-card">
+        <img src="img/z.jpeg">
+        <p>Kusebut dia "HULKK SEDANG TIDUR" 🤍</p>
+    </div>
+
+    <div class="story-card">
+        <img src="img/r.jpeg">
+        <p>Momen nyunset kita 🤍</p>
+    </div>
+
+    <div class="story-card">
+        <img src="img/o.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/p.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/s.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/t.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/v.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/u.jpeg"><p>Kurus si ini aku 🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/q.jpeg"><p>PAP ter NEWS H-3 ULTAH ORANG TERCANTIKKK 🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/w.jpeg"><p>Foto ini aku gatau kapan kamu ngepap 🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/b.jpeg"><p>Ini si aku suka juga 🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/g.jpeg"><p>After apa nihhh hehe</p>
+    </div>
+    <div class="story-card">
+        <img src="img/c.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/d.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/e.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/n.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/j.jpeg"><p>HMMMM 🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/y.jpeg"><p>🤍</p>
+    </div>
+    <div class="story-card">
+        <img src="img/1.jpeg"><p>🤍</p>
+    </div>
+
+</div>
+
+<script>
+const musicStory = document.getElementById("bgMusicStory");
+const storyContainer = document.getElementById("storyContainer");
+
+let hasPlayed = false;
+
+// HP (geser jari)
+storyContainer.addEventListener("touchstart", () => {
+    if (!hasPlayed) {
+        musicStory.volume = 0.5;
+        musicStory.play();
+        hasPlayed = true;
+    }
+}, { passive: true });
+
+// Laptop / PC (drag mouse)
+storyContainer.addEventListener("mousedown", () => {
+    if (!hasPlayed) {
+        musicStory.volume = 0.5;
+        musicStory.play();
+        hasPlayed = true;
+    }
+});
+</script>
+<a href="ending.html">
+<button class="btn" onclick="goToEnding()">💌 I love you</button>
+</a>
+<a href="index.html" class="back">← Kembali</a>
+
+<script>
+const storyMusic = document.getElementById("musicStory");
+
+// cek apakah datang dari tombol cerita
+if (sessionStorage.getItem("playStoryMusic") === "yes") {
+
+    // tunggu sedikit biar halaman siap
+    setTimeout(() => {
+        storyMusic.volume = 0.5;
+        storyMusic.play();
+    }, 300);
+
+    // hapus flag biar ga ngulang
+    sessionStorage.removeItem("playStoryMusic");
+}
+</script>
+
+
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
